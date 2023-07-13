@@ -1,0 +1,22 @@
+{
+  "name": "multi-tenant-graphql",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start:dev": "nodemon src/server.ts"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@apollo/server": "^4.7.5",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "express-jwt": "^8.4.1",
+    "graphql-upload-ts": "^2.0.6",
+    "joi": "^17.9.2",
+    "nodemon": "^3.0.1",
+    "pg": "^8.11.1",
+    "typeorm": "^0.3.17"
+  }
+}
