@@ -4,6 +4,10 @@
   "description": "",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "compile": "tsc",
+    "copy-proto": "ts-node copyProto.ts",
+    "build-ts": "tsc && npm run copy-proto",
+    "start": "npm run compile && node ./dist/server.js",
     "start:dev": "nodemon src/server.ts"
   },
   "author": "",
@@ -17,6 +21,7 @@
     "joi": "^17.9.2",
     "nodemon": "^3.0.1",
     "pg": "^8.11.1",
+    "shelljs": "^0.8.5",
     "typeorm": "^0.3.17"
   }
 }

@@ -1,3 +1,7 @@
 type Query {
   checkHealth: String
 }
+
+type Mutation {
+  signUp(email: String!, password: String!, tenant_id: String!): String
+}
