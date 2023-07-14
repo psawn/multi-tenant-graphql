@@ -1,5 +1,8 @@
+directive @auth(permissions: [String!]) on FIELD_DEFINITION | OBJECT
+
 type Query {
   checkHealth: String
+  testPermission: String @auth(permissions: ["test:permission"])
 }
 
 type Mutation {

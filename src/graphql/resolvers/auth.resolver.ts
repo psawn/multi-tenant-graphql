@@ -10,6 +10,7 @@ import { GraphQLError } from "graphql";
 import { User } from "../../entities/user.entity";
 import { validateAuthInput } from "../validations";
 import { AppConfig } from "../../config";
+import { RolesEnum } from "../roles";
 
 export const authResolvers = {
   Mutation: {
@@ -43,7 +44,7 @@ export const authResolvers = {
 
         await userRepository.insert({
           email,
-          role: "admin",
+          role: RolesEnum.ADMIN,
           password: encryptedPassword,
         });
 
@@ -107,5 +108,6 @@ export const authResolvers = {
   },
   Query: {
     checkHealth: () => "OK",
+    testPermission: () => "Test permission",
   },
 };
