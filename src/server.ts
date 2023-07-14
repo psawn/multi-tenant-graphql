@@ -8,6 +8,7 @@ import { AppConfig, validateEnv } from "./config";
 import { createApolloServer } from "./graphql";
 import { graphqlUploadExpress } from "graphql-upload-ts";
 import { AppDataSource } from "./data-source";
+import { getUser } from "./ultis/jwt.utils";
 
 async function createApp() {
   const app = express();
@@ -33,7 +34,9 @@ async function createApp() {
     }),
     json({ limit: "10mb" }),
     expressMiddleware(server, {
-      context: async ({ req }) => ({}),
+      context: async ({ req }) => {
+        return { user: getUser(req.headers.authorization || "") };
+      },
     })
   );
   return app;

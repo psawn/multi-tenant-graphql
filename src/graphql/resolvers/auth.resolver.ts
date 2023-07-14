@@ -107,5 +107,6 @@ export const authResolvers = {
   },
   Query: {
     checkHealth: () => "OK",
+    testPermission: () => "Test permission",
   },
 };
