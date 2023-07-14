@@ -10,6 +10,8 @@ const schema = Joi.object({
   DB_PASSWORD: Joi.string().required(),
   DB_NAME: Joi.string().required(),
   DB_PORT: Joi.number().required().default(5432),
+  EMAIL_REGEX: Joi.string().required(),
+  PASSWORD_REGEX: Joi.string().required(),
 });
 
 export const AppConfig = {
@@ -21,6 +23,8 @@ export const AppConfig = {
   DB_PASSWORD: process.env.DB_PASSWORD!,
   DB_NAME: process.env.DB_NAME!,
   DB_PORT: +process.env.DB_PORT!,
+  EMAIL_REGEX: process.env.EMAIL_REGEX!,
+  PASSWORD_REGEX: process.env.PASSWORD_REGEX!,
 };
 
 export async function validateEnv() {
